@@ -3,8 +3,8 @@ object productora {
   const asistentes = #{}  
   const bandas = #{} 
   
-  /* Aca se aplican el concepto de DELEGACION poeque tanto los metodos auxiliares como en los principales que 
-  se pidieron en la consigna, envian mensajes a los objetos o clases que cuentan con la informacion para 
+/* Acá se aplican el concepto de DELEGACIÓN porque tanto los métodos auxiliares como en los principales que 
+  se pidieron en la consigna, envían mensajes a los objetos o clases que cuentan con la información para 
   hacer las operaciones necesarias
   */
 
@@ -17,7 +17,7 @@ object productora {
   method cantidadEntradasVendidasDe(banda) = asistentes.map({asistente => asistente.cantidadEntradasVendidasDe(banda)   }).sum()
   method bandaMasPoular() = bandas.max({banda => self.cantidadEntradasVendidasDe(banda)}) 
 
-  /* Aparece de nuevo el POLIMORFISMO ya que la productora no necesita ni tiene que sabe que asistentes son bonificados vio y cuales no. 
-  Simplemenete cada bono sabe como actuar ante ese mensaje*/
+  /* Aparece de nuevo el POLIMORFISMO ya que la productora no necesita ni tiene que sabe qué asistentes son bonificados VIP y cuáles no. 
+  Simplemente cada bono sabe cómo actuar ante ese mensaje*/
   method bonificar() = asistentes.forEach({asistente => asistente.bonificar()})
 }
