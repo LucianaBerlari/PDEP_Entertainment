@@ -9,5 +9,8 @@ object productora {
 
   method cantidadEntradasVendidas() = asistentes.map({asistente => asistente.cantidadEntradasVendidas()}).sum()
 
-  method bandaMasPoular() = bandas.max({banda => banda.cantidadEntradasVendidasDe(banda)}) // hay alguna aclaracion de que no hay 
+  method bandaMasPoular() = bandas.max({banda => banda.cantidadEntradasVendidasDe(banda)}) // hay alguna aclaracion  
+
+// falta estooo
+   method bonificar() = asistentes.filter({asistente => asistente.abono()}) 
 }
