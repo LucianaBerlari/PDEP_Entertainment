@@ -1,4 +1,6 @@
-// Utilizo clase porque voy a tener muchas bandas
+/* Acá se utiliza el concepto HERENCIA. Por un lado tenemos una superclase abstracta, Banda, que contiene el 
+comportamiento y el estado que comparten y entienden todos los tipos de bandas */
+
 class Banda {
   const property nombre
   
@@ -11,7 +13,7 @@ class Banda {
   method gastoExtra()
 }
 
-// Aca estoy usando HERENCIA porque hay comportamiento que comparten pero con alguna leve diferencia. Como las bandas son 
+/* BandaDeRock, BandaDeTrap y BandaIndie heredan el parte del comportamiento de Banda, y también redefinen algunos métodos */
 class BandaDeRock inherits Banda {
   var cantidadSolosGuitarra
   
@@ -38,7 +40,11 @@ class BandaDeTrap inherits Banda {
 }
 
 class BandaIndie inherits Banda {
-    var cantidadInstrumentos
+  var cantidadInstrumentos
    override method popularidad() = 3.14 * nombre.size()
    override method gastoExtra() = 500 * cantidadInstrumentos 
 }
+
+
+/* También se ve aplicado el POLIMORFISMO porque gastoExtra() y popularidad() producen distintos resultado según 
+la clase de banda que sea pero todas entienden el mensaje */
